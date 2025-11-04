@@ -28,17 +28,6 @@ enum layers{
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /*
-     * ┌───┬───┬───┬───┐
-     * │ 7 │ 8 │ 9 │ / │
-     * ├───┼───┼───┼───┤
-     * │ 4 │ 5 │ 6 │ * │
-     * ├───┼───┼───┼───┤
-     * │ 1 │ 2 │ 3 │ - │
-     * ├───┼───┼───┼───┤
-     * │ 0 │ . │Ent│ + │
-     * └───┴───┴───┴───┘
-     */
     [DEFAULT] = LAYOUT2(
         KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, KC_INS, KC_PGUP, KC_PGDN,
         KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_NUM, KC_PSLS, KC_PAST, KC_PMNS,
@@ -48,11 +37,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(FN), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT, KC_P0, KC_PDOT
     ),
     [FN] = LAYOUT2(
-        QK_RBT, XXX, XXX, XXX, XXX, KC_MPLY, KC_MSTP, KC_MPRV, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, XXX, KC_PAUS, KC_SCRL, KC_HOME, KC_END,
+        QK_RBT, XXX, XXX, XXX, XXX, KC_MPLY, KC_MSTP, KC_MPRV, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, QK_BOOT, KC_PAUS, KC_SCRL, KC_HOME, KC_END,
         XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX,
-        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, KC_PSCR, XXX, XXX, XXX, XXX, XXX, XXX, XXX,
-        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX,
-        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX,
-        XXX, XXX, XXX, XXX, _______, KC_APP, XXX, XXX, XXX, XXX, XXX
+        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, KC_PSCR, XXX, XXX, XXX, XXX, RM_SPDU, XXX, XXX,
+        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, RM_HUED, RM_TOGG, RM_HUEU,
+        XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, XXX, RM_VALU, XXX, RM_SPDD, XXX, XXX,
+        XXX, XXX, XXX, XXX, _______, KC_APP, RM_PREV, RM_VALD, RM_NEXT, XXX, XXX
     )
 };
