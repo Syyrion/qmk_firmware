@@ -135,3 +135,38 @@ led_config_t g_led_config =
         4, 4, 4, 4, 4, 4, 4
     }
 };
+
+
+#define INDICATOR_A_ON() do { RGB_MATRIX_INDICATOR_SET_COLOR(1, 0, 100, 100) } while (0) 
+#define INDICATOR_A_OFF() do { RGB_MATRIX_INDICATOR_SET_COLOR(1, 0, 0, 0) } while (0) 
+
+#define INDICATOR_I_ON() do { RGB_MATRIX_INDICATOR_SET_COLOR(2, 0, 100, 100) } while (0) 
+#define INDICATOR_I_OFF() do { RGB_MATRIX_INDICATOR_SET_COLOR(2, 0, 0, 0) } while (0) 
+
+#define INDICATOR_S_ON() do { RGB_MATRIX_INDICATOR_SET_COLOR(0, 0, 140, 170) } while (0) 
+#define INDICATOR_S_OFF() do { RGB_MATRIX_INDICATOR_SET_COLOR(0, 0, 0, 0) } while (0) 
+
+#define INDICATOR_W_ON() do { RGB_MATRIX_INDICATOR_SET_COLOR(3, 0, 100, 100) } while (0) 
+#define INDICATOR_W_OFF() do { RGB_MATRIX_INDICATOR_SET_COLOR(3, 0, 0, 0) } while (0) 
+
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    led_t led_state = host_keyboard_led_state();
+
+    if (led_state.caps_lock)
+        INDICATOR_A_ON();
+    else
+        INDICATOR_A_OFF();
+
+    if (led_state.num_lock)
+        INDICATOR_I_ON();
+    else
+        INDICATOR_I_OFF();
+
+    if (led_state.scroll_lock)
+        INDICATOR_S_ON();
+    else
+        INDICATOR_S_OFF();
+
+    return false;
+}
